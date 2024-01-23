@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "StudentGrpcService.Protos";
+
+service StudentContract { 
+  rpc GetStudentsBySchoolId (GetStudentsBySchoolIdRequest) returns (GetStudentsBySchoolIdResponse) {}
+}
+
+message GetStudentsBySchoolIdRequest {
+  int32 schoolId = 1;
+}
+
+message GetStudentsBySchoolIdResponse { 
+  repeated Student students = 1;
+}
+
+message Student { 
+  int32 id = 1;
+}

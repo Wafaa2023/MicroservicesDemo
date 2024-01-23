@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service SchoolContract {
+  rpc CallingGetStudentsBySchoolId (SchoolRequest) returns (StudentsResponse);
+}
+
+message SchoolRequest {
+  int32 school_id = 1;
+}
+
+message StudentsResponse {
+  repeated StudentResponse students = 1;
+}
+
+message StudentResponse {
+  string name = 1;
+  int32 age = 2;
+  string course = 3;
+}
